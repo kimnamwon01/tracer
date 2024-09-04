@@ -1,0 +1,302 @@
+@charset "UTF-8";
+
+/* 전역 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* 스프린트 컨테이너 */
+.sprint-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* 스프린트 헤더 */
+.sprint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.sprint-header h2 {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* 날짜 추가 버튼 */
+.add-date {
+    background-color: transparent;
+    border: none;
+    color: #17A663;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 이슈 카운트 */
+.issue-count {
+    font-size: 12px;
+    color: #888;
+}
+
+/* 이슈 리스트 */
+.issue-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 이슈 항목 */
+.issue-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* 마지막 이슈 항목 */
+.issue-item:last-child {
+    border-bottom: none;
+}
+
+/* 이슈 키 */
+.issue-key {
+    width: 80px;
+    font-weight: bold;
+    color: #17A663;
+    margin-right: 10px; /* Add space between key and summary */
+}
+
+/* 이슈 요약 */
+.issue-summary {
+    flex-grow: 1; /* Takes up remaining space */
+    cursor: pointer;
+    color: #333;
+}
+
+.issue-summary:hover {
+    text-decoration: underline;
+}
+
+/* 이슈 상태 */
+.issue-status {
+    margin-left: 10px; /* Add space between summary and status */
+    font-size: 12px;
+    color: #666;
+}
+
+/* 체크박스 스타일 */
+.issue-item input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+}
+
+/* 체크된 이슈 항목 스타일 */
+.issue-item input:checked + label,
+.issue-item input:checked + label + span.issue-summary {
+    color: #17A663;
+    font-weight: bold;
+}
+
+/* 추가 이슈 버튼 */
+.add-issue {
+    background-color: #17A663;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 텍스트 영역 컨테이너 */
+.textarea-container {
+    display: none;
+    margin-top: 50px;
+}
+
+.textarea-container textarea {
+    width: 100%;
+    height: 100px;
+}
+
+/* 수정창 */
+.edit-container {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 고정 위치 */
+    top: 30px; /* 상단 여백 설정 */
+    right: 0; /* 오른쪽 정렬 */
+    width: 60%; /* 너비 설정 */
+    height: calc(100% - 30px); /* 높이를 화면 전체에서 30px 만큼 줄임 */
+    background-color: white; /* 배경색 설정 */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* 그림자 설정 */
+    padding: 20px; /* 내부 여백 설정 */
+    z-index: 1000; /* z-index 설정 */
+}
+
+/* 수정창 헤더 */
+.edit-header {
+    display: flex; /* 플렉스 박스 설정 */
+    flex-direction: column; /* 열 방향으로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    border-bottom: 1px solid #17A663; /* 하단 경계선 설정 */
+    padding-bottom: 20px; /* 하단 패딩 설정 */
+    margin-bottom: 30px; /* 하단 여백 설정 */
+    margin-top: 70px; /* 상단 여백 추가 */
+    font-size: 50px;
+}
+/* 컨테이너 박스 버튼 위아래 조정*/
+.edit-content {
+    margin-top: 30px;
+}
+
+/* 입력 필드 스타일 */
+#edit-name {
+    border: 1px solid transparent; /* 기본 테두리 제거 */
+    width: 100%; /* 너비를 부모 컨테이너에 맞춤 */
+    padding: 10px; /* 내부 여백 설정 */
+    font-size: 50px; /* 글자 크기 설정 */
+    box-sizing: border-box; /* 박스 사이징을 컨텐츠 박스로 설정하여 패딩 포함 */
+}
+
+/* 입력 필드 포커스 시 스타일 */
+#edit-name:focus {
+    border: 2px solid #17A663; /* 포커스 시 테두리 설정 */
+    outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+/* 수정창 버튼 */
+.btn-primary {
+    background-color: #17A663;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #149f54;
+}
+
+/* 닫기 버튼 */
+.btn-secondary {
+    background-color: #FF0000;
+    border: 1px solid #FF0000;
+    color: white;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #e60000;
+    border-color: #e60000;
+}
+
+/* 버튼을 15px 아래로 이동 */
+.btn-container {
+    margin-top: 15px; /* 버튼들을 포함한 컨테이너에 적용 */
+}
+
+/* 달력 스타일 */
+.calendar {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.calendar.hidden {
+    display: none;
+}
+
+.calendar .day {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+/* 체크박스 전체 선택 버튼 */
+#select-all {
+    background-color: #17A663;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* 체크박스 선택 시 스타일 */
+input[type="checkbox"]:checked {
+    background-color: #17A663;
+}
+
+/* 모달창 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 고정 위치 */
+    z-index: 1000; /* 가장 위에 위치 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 스크롤 허용 */
+    background-color: rgba(0, 0, 0, 0.4); /* 반투명 배경색 */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* 화면 중앙 */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* 너비 설정 */
+    max-width: 500px; /* 최대 너비 설정 */
+    position: relative; /* 위치 설정 */
+}
+
+/* 닫기 버튼 스타일 */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
+/* 제목 입력 필드 스타일 */
+#title-input {
+    width: calc(100% - 22px); /* 버튼과 여백 고려 */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* 등록 버튼 스타일 */
+.modal-content button {
+    background-color: #17A663; /* 등록 버튼 배경색 */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

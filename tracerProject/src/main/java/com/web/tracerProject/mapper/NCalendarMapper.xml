@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.tracerProject.mapper.NDaoCalendar">
+    <select id="getScheduleCalendarList" parameterType="String" resultType="com.web.tracerProject.vo.Calendar">
+        SELECT
+			SID AS ID, TITLE, EMAIL AS WRITER, 
+			TO_CHAR(START_DATE, 'YYYY-MM-DD') AS "START",
+			TO_CHAR(END_DATE, 'YYYY-MM-DD') AS "END", 
+			DESCRIPTION AS CONTENT,
+			'#2ecc71' AS BACKGROUNDCOLOR,
+			'WHITE' AS TEXTCOLOR, '#' AS URL,
+			'true' AS ALLDAY
+		FROM SCHEDULE
+		WHERE PID = #{pid}
+    </select>
+    
+    <insert id="insScheduleCalendar" parameterType="com.web.tracerProject.vo.Calendar">
+        INSERT INTO SCHEDULE 
+	  		(SID, TITLE, EMAIL, START_DATE, END_DATE, DESCRIPTION, PID)
+	  		values('SID'||LPAD(SID_SEQ.NEXTVAL, 5, '0'),
+	  		#{title}, #{writer}, #{start}, #{end},
+	  		#{content}, #{pid})
+    </insert>
+    
+    <update id="uptScheduleCalendar" parameterType="com.web.tracerProject.vo.Calendar">
+        UPDATE SCHEDULE
+		        SET title = #{title},
+		            start_date = #{start},
+		            end_date = #{end},
+		            email = #{writer},
+		            description = #{content}
+		        WHERE sid = #{id}
+    </update>
+    
+    <delete id="delScheduleCalendar" parameterType="String">
+       DELETE FROM SCHEDULE WHERE sid = #{id}
+    </delete>
+    
+    <select id="getScheduleCalendarListIndiv" parameterType="String" resultType="com.web.tracerProject.vo.Calendar">
+        SELECT
+			CID AS ID, TITLE, EMAIL AS WRITER, 
+			TO_CHAR(START_DATE, 'YYYY-MM-DD') AS "START",
+			TO_CHAR(END_DATE, 'YYYY-MM-DD') AS "END", 
+			CONTENT,
+			'#66CDAA' AS BACKGROUNDCOLOR,
+			'WHITE' AS TEXTCOLOR, '#' AS URL,
+			'true' AS ALLDAY
+		FROM CALENDAR
+		WHERE EMAIL = #{email}
+		AND CALENDARTYPE = 'indiv'
+    </select>
+    
+    <insert id="insScheduleCalendarIndiv" parameterType="com.web.tracerProject.vo.Calendar">
+         INSERT INTO CALENDAR 
+	  		(CID, TITLE, EMAIL, START_DATE, END_DATE, CONTENT, TID)
+	  		values(CID_SEQ.NEXTVAL,
+	  		#{title},#{writer},#{start},#{end},
+	  		#{content}, #{tid})
+    </insert>
+    
+    <update id="uptScheduleCalendarIndiv" parameterType="com.web.tracerProject.vo.Calendar">
+        UPDATE CALENDAR
+		        SET TITLE = #{title},
+		            START_DATE = #{start},
+		            END_DATE = #{end},
+		            CONTENT = #{content}
+		        WHERE CID = #{id}
+    </update>
+    
+    <delete id="delScheduleCalendarIndiv" parameterType="String">
+        DELETE FROM CALENDAR WHERE CID = #{id}
+    </delete>
+    
+    <select id="getScheduleCalendarListTeam" parameterType="String" resultType="com.web.tracerProject.vo.Calendar">
+        SELECT
+			CID AS ID, TITLE, EMAIL AS WRITER, 
+			TO_CHAR(START_DATE, 'YYYY-MM-DD') AS "START",
+			TO_CHAR(END_DATE, 'YYYY-MM-DD') AS "END", 
+			CONTENT,
+			'#20B2AA' AS BACKGROUNDCOLOR,
+			'WHITE' AS TEXTCOLOR, '#' AS URL,
+			'true' AS ALLDAY
+		FROM CALENDAR
+		WHERE TID = #{tid}
+		AND CALENDARTYPE = 'team'
+    </select>
+    
+    <insert id="insScheduleCalendarTeam" parameterType="com.web.tracerProject.vo.Calendar">
+         INSERT INTO CALENDAR 
+	  		(CID, TITLE, EMAIL, START_DATE, END_DATE, CONTENT, TID, CALENDARTYPE)
+	  		VALUES(CID_SEQ.NEXTVAL,
+	  		#{title},#{writer},#{start},#{end},
+	  		#{content}, #{tid}, 'team')
+    </insert>
+    
+    <update id="uptScheduleCalendarTeam" parameterType="com.web.tracerProject.vo.Calendar">
+        UPDATE CALENDAR
+		        SET TITLE = #{title},
+		            START_DATE = #{start},
+		            END_DATE = #{end},
+		            CONTENT = #{content}
+		        WHERE cid = #{id}
+    </update>
+    
+    <delete id="delScheduleCalendarTeam" parameterType="String">
+        DELETE FROM CALENDAR WHERE CID = #{id}
+    </delete>
+</mapper>

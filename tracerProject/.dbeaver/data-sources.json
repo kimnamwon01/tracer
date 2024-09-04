@@ -1,0 +1,44 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-190cf07de17-32b4bb520e0eb9c1": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "192.168.0.54",
+			"save-password": true,
+			"show-system-objects": true,
+			"configuration": {
+				"host": "192.168.0.54",
+				"port": "1521",
+				"database": "xe",
+				"url": "jdbc:oracle:thin:@//192.168.0.54:1521/xe",
+				"configurationType": "MANUAL",
+				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {"oracle_thin-190cf07de17-32b4bb520e0eb9c1":{"JH":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202408061349\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-190cf07de17-32b4bb520e0eb9c1\"\u003e\u003centity id\u003d\"1\" name\u003d\"APPROVAL\" fq-name\u003d\"JH.APPROVAL\" order\u003d\"0\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"161\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"BOARD\" fq-name\u003d\"JH.BOARD\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"482\" y\u003d\"40\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"BOARD2\" fq-name\u003d\"JH.BOARD2\" order\u003d\"2\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"305\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"CHATTING\" fq-name\u003d\"JH.CHATTING\" order\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"589\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"COMMENTS\" fq-name\u003d\"JH.COMMENTS\" order\u003d\"4\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"793\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"6\" name\u003d\"NOTIFICATION\" fq-name\u003d\"JH.NOTIFICATION\" order\u003d\"5\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"977\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"7\" name\u003d\"PROJECT\" fq-name\u003d\"JH.PROJECT\" order\u003d\"6\" font\u003d\"Segoe UI:9:0\" x\u003d\"638\" y\u003d\"811\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"8\" name\u003d\"REQUEST\" fq-name\u003d\"JH.REQUEST\" order\u003d\"7\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"120\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"9\" name\u003d\"RESOURCEMANAGE\" fq-name\u003d\"JH.RESOURCEMANAGE\" order\u003d\"8\" border-width\u003d\"3\" font\u003d\"Segoe UI:9:0\" x\u003d\"607\" y\u003d\"986\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"10\" name\u003d\"SCHEDULE\" fq-name\u003d\"JH.SCHEDULE\" order\u003d\"9\" font\u003d\"Segoe UI:9:0\" x\u003d\"227\" y\u003d\"1365\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"11\" name\u003d\"TASK\" fq-name\u003d\"JH.TASK\" order\u003d\"10\" font\u003d\"Segoe UI:9:0\" x\u003d\"40\" y\u003d\"345\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"12\" name\u003d\"TEAM\" fq-name\u003d\"JH.TEAM\" order\u003d\"11\" font\u003d\"Segoe UI:9:0\" x\u003d\"652\" y\u003d\"672\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"13\" name\u003d\"USER_INFO\" fq-name\u003d\"JH.USER_INFO\" order\u003d\"12\" font\u003d\"Segoe UI:9:0\" x\u003d\"482\" y\u003d\"664\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_BOARD_TO_REQUEST\" fq-name\u003d\"JH.REQUEST.FK_BOARD_TO_REQUEST\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"8\"/\u003e\u003crelation name\u003d\"FK_PROJECT\" fq-name\u003d\"JH.RESOURCEMANAGE.FK_PROJECT\" type\u003d\"fk\" pk-ref\u003d\"7\" fk-ref\u003d\"9\"/\u003e\u003crelation name\u003d\"FK_PROJECT_TO_SCHEDULE\" fq-name\u003d\"JH.SCHEDULE.FK_PROJECT_TO_SCHEDULE\" type\u003d\"fk\" pk-ref\u003d\"7\" fk-ref\u003d\"10\"/\u003e\u003crelation name\u003d\"FK_PROJECT_TO_TEAM\" fq-name\u003d\"JH.TEAM.FK_PROJECT_TO_TEAM\" type\u003d\"fk\" pk-ref\u003d\"7\" fk-ref\u003d\"12\"/\u003e\u003crelation name\u003d\"FK_REQUEST_TO_APPROVAL\" fq-name\u003d\"JH.APPROVAL.FK_REQUEST_TO_APPROVAL\" type\u003d\"fk\" pk-ref\u003d\"8\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_APPROVAL\" fq-name\u003d\"JH.APPROVAL.FK_USER_INFO_TO_APPROVAL\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"1\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_CHATTING\" fq-name\u003d\"JH.CHATTING.FK_USER_INFO_TO_CHATTING\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"4\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_COMMENTS\" fq-name\u003d\"JH.COMMENTS.FK_USER_INFO_TO_COMMENTS\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_NOTIFICATION\" fq-name\u003d\"JH.NOTIFICATION.FK_USER_INFO_TO_NOTIFICATION\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"6\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_REQUEST\" fq-name\u003d\"JH.REQUEST.FK_USER_INFO_TO_REQUEST\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"8\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_SCHEDULE\" fq-name\u003d\"JH.SCHEDULE.FK_USER_INFO_TO_SCHEDULE\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"10\"/\u003e\u003crelation name\u003d\"FK_USER_INFO_TO_TEAM\" fq-name\u003d\"JH.TEAM.FK_USER_INFO_TO_TEAM\" type\u003d\"fk\" pk-ref\u003d\"13\" fk-ref\u003d\"12\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}},":RESOURCEMANAGE":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202407251207\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-190cf07de17-32b4bb520e0eb9c1\"\u003e\u003centity id\u003d\"1\" name\u003d\"RESOURCEMANAGE\" fq-name\u003d\"JH.RESOURCEMANAGE\" order\u003d\"0\" color-bg\u003d\"255,128,64\" font\u003d\"Segoe UI:9:0\" x\u003d\"39\" y\u003d\"36\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"PROJECT\" fq-name\u003d\"JH.PROJECT\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"344\" y\u003d\"52\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_PROJECT\" fq-name\u003d\"JH.RESOURCEMANAGE.FK_PROJECT\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

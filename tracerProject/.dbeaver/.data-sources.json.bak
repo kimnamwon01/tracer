@@ -1,0 +1,44 @@
+{
+	"folders": {},
+	"connections": {
+		"oracle_thin-190cf07de17-32b4bb520e0eb9c1": {
+			"provider": "oracle",
+			"driver": "oracle_thin",
+			"name": "192.168.0.54",
+			"save-password": true,
+			"show-system-objects": true,
+			"configuration": {
+				"host": "192.168.0.54",
+				"port": "1521",
+				"database": "xe",
+				"url": "jdbc:oracle:thin:@//192.168.0.54:1521/xe",
+				"configurationType": "MANUAL",
+				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
+					"@dbeaver-sid-service@": "SERVICE"
+				},
+				"auth-model": "oracle_native"
+			}
+		}
+	},
+	"virtual-models": {"oracle_thin-190cf07de17-32b4bb520e0eb9c1":{"JH":{":RESOURCEMANAGE":{"properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202407251207\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"oracle_thin-190cf07de17-32b4bb520e0eb9c1\"\u003e\u003centity id\u003d\"1\" name\u003d\"RESOURCEMANAGE\" fq-name\u003d\"JH.RESOURCEMANAGE\" order\u003d\"0\" color-bg\u003d\"255,128,64\" font\u003d\"Segoe UI:9:0\" x\u003d\"39\" y\u003d\"36\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"PROJECT\" fq-name\u003d\"JH.PROJECT\" order\u003d\"1\" font\u003d\"Segoe UI:9:0\" x\u003d\"344\" y\u003d\"52\"\u003e\u003cpath name\u003d\"JH\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"FK_PROJECT\" fq-name\u003d\"JH.RESOURCEMANAGE.FK_PROJECT\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"1\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}
